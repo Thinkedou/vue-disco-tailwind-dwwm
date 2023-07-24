@@ -10,9 +10,15 @@ const allRecords = ref(records)
 
 const getCoverUrl = (coverUrl) => coverUrl ?? 'src/assets/img/default.jpg'
 
-const incStock = ()=>{
-  
+const incStock = (album)=>{
+  console.log(`%c ${album.title}`, "border-radius:2px;background-color:lime;display:block;border:2px solid cyan;color:crimson")
+  album.stock++
+  console.table(records)
+}
 
+const decStock = (album)=>{
+
+  if(album.stock>0) album.stock--
   
 }
 
@@ -117,8 +123,8 @@ const incStock = ()=>{
                     </div>
                   <div class="w-full">
                     <div class="float-right">
-                      <button @click="incStock" type="button" class="border border-teal-500 bg-teal-500 text-white px-4 py-2 m-2 ease select-none hover:bg-teal-400 hover:border-gray-900 hover:rounded-md"> + </button>
-                      <button type="button" class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-purple-800"> - </button>
+                      <button @click="incStock(album)" type="button" class="border border-teal-500 bg-teal-500 text-white px-4 py-2 m-2 ease select-none hover:bg-teal-400 hover:border-gray-900 hover:rounded-md"> + </button>
+                      <button @click="decStock(album)" type="button" class="border border-teal-500 bg-teal-500 text-white rounded-md px-4 py-2 m-2 ease select-none hover:bg-purple-800"> - </button>
                     </div>
                   </div>
                   </div>
