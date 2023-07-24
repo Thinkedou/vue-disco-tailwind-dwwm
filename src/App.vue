@@ -13,7 +13,7 @@ const getCoverUrl = (coverUrl) => coverUrl ?? 'src/assets/img/default.jpg'
 const incStock = (album)=>{
   console.log(`%c ${album.title}`, "border-radius:2px;background-color:lime;display:block;border:2px solid cyan;color:crimson")
   album.stock++
-  console.table(records)
+  console.table(records) // attention records sera également modifié en mémoire
 }
 
 const decStock = (album)=>{
