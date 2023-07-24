@@ -1,29 +1,40 @@
-# vue-disco-tailwind
+# Disco III ~ Tailwind ~ Vue3
 
-This template should help get you started developing with Vue 3 in Vite.
+Intégrer une maquette statique dans vue3 et travailler les directives et les events 
 
-## Recommended IDE Setup
+## Importer les assets
+Importer le layout et les assets (css, js, img) 
+## Rajouter un album de son choix
+Histoire de manipuler un peu le data-model
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Créer une data reactive()
+Rendre l'album d'exemple dynamique
 
-## Customize configuration
+## v-for
+Charger allRecords.js et afficher tous les albums, attention à **:key**
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Les images 
+Switcher sur l'image default.jpg si un album n'a pas de cover 
 
-```sh
-npm install
-```
+## Créer un composant CardAlbum
+Pensez à bien déclarer les types des props
 
-### Compile and Hot-Reload for Development
+## Gestion des stocks 
+Permettre la gestion des stocks via les btns [+] & [-]
+## v-if ou v-show pour picto stock
+Afficher le bon picto en fonction du stock de l'album
 
-```sh
-npm run dev
-```
+## Filtres
+Brancher les filtres  
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+
+## mettre des albums en favoris 
+un click sur la card > fav, un autre > unfav 
+Lier une class si fav pour highlight *border-rose-600*
+? est-ce que les btns stock marchent toujours?
+
+## afficher le stock total avec computed & reduce()
+Afficher ça à côté du title dans la nav ou dans la zone filtre
+
