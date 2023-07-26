@@ -10,20 +10,11 @@ console.log(records)
 // ici j'indique à vue que je vais me servir de ce tableau en tant que data réactive
 const allRecords = ref(records)
 
-const getCoverUrl = (coverUrl) => coverUrl ?? 'src/assets/img/default.jpg'
+const stockOnly = ref(true)
 
-const incStock = (album)=>{
-  console.log(`%c ${album.title}`, "border-radius:2px;background-color:lime;display:block;border:2px solid cyan;color:crimson")
-  album.stock++
-  console.table(records) // attention records sera également modifié en mémoire
+const inStockOnly = ()=>{
+  console.warn("In stock only a changé!", stockOnly.value)
 }
-
-const decStock = (album)=>{
-
-  if(album.stock>0) album.stock--
-  
-}
-
 
 
 </script>
@@ -54,13 +45,15 @@ const decStock = (album)=>{
                                 name="comments" 
                                 type="checkbox" 
                                 class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                               
+                                @change="inStockOnly"
+                                v-model="stockOnly"
                               >
+                              
                             </div>
                             <div class="ml-3 text-sm">
                               <label for="comments" class="font-medium text-cyan-700">In stock only</label>
                             </div>
-                            
+                            {{ stockOnly }}
                           </div>
      
                         </div>
