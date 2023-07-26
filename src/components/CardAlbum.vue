@@ -2,7 +2,8 @@
 
 const props = defineProps({
     album:{
-        type:Object
+        type:Object,
+        required:true
     }
 })
 

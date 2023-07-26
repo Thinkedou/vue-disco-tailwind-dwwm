@@ -81,7 +81,9 @@ const decStock = (album)=>{
             <section class="text-gray-600 body-font">
                 <!-- one records -->
                 <CardAlbum 
-                  :album="allRecords[0]"
+                  v-for="album in allRecords"
+                  :key="album.id"
+                  :album="album"
                 />
                
             </section><!-- end one records -->
